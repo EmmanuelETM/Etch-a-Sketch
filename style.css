@@ -1,9 +1,53 @@
 @import url('https://fonts.googleapis.com/css2?family=Besley:ital,wght@0,400;1,900&display=swap');
 
-
 body{
     font-family: Besley, serif;
     text-align: center;
     color: white;
     background-color: #111827;
+}
+
+button {
+    margin: 0 8px;
+    padding: 1rem 2rem;
+    background-color: #1d4ed8;
+    color: white;
+    border: none;
+    border-radius: 30px;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+
+}
+
+.options-container {
+    display: flex;
+    align-items: center;
+}
+
+.button-container {
+    display: flex;
+    align-items: center;
+}
+
+
+.sketchpad {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 60%;
+    background-color: white;
+    border-radius: 10px;
+    color: black;
+}
+
+.sketchpad div {
+    flex: 1;
+    border: solid black 1px;
+    padding: 16px;
 }
