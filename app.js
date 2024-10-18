@@ -1,15 +1,19 @@
+let pog = document.createElement('div');
+pog.textContent = 'verypoggers';
+
+
 for(let i = 0; i < 1003; i++){
     let div = document.createElement('div');
-    sketchpadDiv.appendChild(div);
+    sketchpad.appendChild(div);
 }
 
-sketchpadDiv.addEventListener('mouseover', (Event) => {
+sketchpad.addEventListener('mouseover', (Event) => {
     console.log(Event.target);
     Event.target.style.backgroundColor = 'gray';
 });
 
 restartButton.addEventListener('click', (Event) => {
-    const cells = document.querySelectorAll('.sketchpad div');
+    let cells = document.querySelectorAll('.sketchpad div');
     cells.forEach(element => {
         element.style.backgroundColor = 'white';
     })
