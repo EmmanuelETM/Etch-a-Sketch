@@ -13,7 +13,7 @@ let sketchpad = document.createElement("div");
 colorInput.type = 'checkbox';
 colorLabel.textContent = 'Color';
 hoverInput.type = 'checkbox';
-hoverLabel.textContent = 'click';
+hoverLabel.textContent = 'hover';
 resizeButton.textContent = 'Resize';
 resizeButton.classList.add('resize');
 restartButton.textContent = 'Restart';

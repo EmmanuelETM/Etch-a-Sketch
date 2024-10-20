@@ -1,14 +1,18 @@
-let pog = document.createElement('div');
-pog.textContent = 'verypoggers';
-
-
-for(let i = 0; i < 1003; i++){
-    let div = document.createElement('div');
-    sketchpad.appendChild(div);
+const sketchSize = (size, sketchpad) => {
+    sketchpad.innerHTML = '';
+    for(let i = 0; i < size; i++){
+        let div = document.createElement('div');
+        sketchpad.appendChild(div);
+    }
 }
 
-sketchpad.addEventListener('mouseover', (Event) => {
-    console.log(Event.target);
+resizeButton.addEventListener('click', Event => {
+    let rawSize = parseInt(prompt('Enter the size (from 1 to 100): ', 100));
+    let size = rawSize * rawSize;
+    sketchSize(size, sketchpad);
+})
+
+sketchpad.addEventListener('click', (Event) => {
     Event.target.style.backgroundColor = 'gray';
 });
 
