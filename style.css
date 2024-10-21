@@ -1,7 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Besley:ital,wght@0,400;1,900&display=swap');
-* {
-    box-sizing: border-box;
-}
+
 body {
     font-family: Besley, serif;
     text-align: center;
@@ -42,12 +40,14 @@ body {
     height: 550px;
     background-color: white;
     color: black;
+    box-sizing: border-box;
 }
 
 .sketchpad div {
     flex: 1;
     border: solid black 1px;
     padding: 16px;
+    box-sizing: border-box;
 }
 
 /* Buttons */

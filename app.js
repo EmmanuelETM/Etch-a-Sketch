@@ -11,16 +11,27 @@ const cellSize = (size) => {
 const gridSize = (size) => {
     for (let i = 0; i < size ** 2; i++) {
         let cell = document.createElement('div');
-        cell.classList.add('cell');
         sketchpad.appendChild(cell);
     }
-
     cellSize(size);
 }
 
+// Handling user input and sizing
 
-gridSize(16);
+const updateGrid = () => {
+    let size = prompt('Enter the size (1 to 100): ');
+    try {
+        size = Number(size);
+        if (size > 100){
+            size = 100;
+        }
+        gridSize(size);
+    } catch (error) {
+        console.log(error);
+    }
+}
 
+resizeButton.addEventListener('click', updateGrid);
 
 // Color checkbox functions
 
@@ -78,3 +89,4 @@ restartButton.addEventListener('click', (Event) => {
 })
 
 updateListeners();
+gridSize(16);
