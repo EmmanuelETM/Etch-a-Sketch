@@ -2,16 +2,18 @@
 
 const cellSize = (size) => {
     let cellArr = document.querySelectorAll('.cell');
+    let dimension = 550 / size;
     cellArr.forEach(cell => {
-        cell.style.width = `${550/size}` + 'px';
-        cell.style.height = `${550/size}` + 'px';
+        cell.style.width = `${dimension}px`;
+        cell.style.height = `${dimension}px`;
     })
 }
 
 const gridSize = (size) => {
+    sketchpad.innerHTML = '';
     for (let i = 0; i < size ** 2; i++) {
         let cell = document.createElement('div');
-        cell.classList.add("cell")
+        cell.classList.add('cell');
         sketchpad.appendChild(cell);
     }
     cellSize(size);
