@@ -44,9 +44,8 @@ body {
 }
 
 .sketchpad div {
-    flex: 1;
     border: solid black 1px;
-    padding: 16px;
+    padding: 0px;
     box-sizing: border-box;
 }
 

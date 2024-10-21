@@ -11,6 +11,7 @@ const cellSize = (size) => {
 const gridSize = (size) => {
     for (let i = 0; i < size ** 2; i++) {
         let cell = document.createElement('div');
+        cell.classList.add("cell")
         sketchpad.appendChild(cell);
     }
     cellSize(size);
