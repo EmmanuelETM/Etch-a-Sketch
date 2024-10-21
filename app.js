@@ -1,20 +1,32 @@
-const sketchSize = (size, sketchpad) => {
+
+// Color checkbox functions
+const getColor = () => {
+    const color = '#' + Math.floor(Math.random() * 16777215).toString(16);
+    return color;
+}
+
+const handleDrawing = (Event) => {
+    if (colorInput.checked) {
+        Event.target.style.backgroundColor = getColor();
+    } else {
+        Event.target.style.backgroundColor = 'gray';
+    }
+}
+
+const sketchSize = (size) => {
     sketchpad.innerHTML = '';
-    for(let i = 0; i < size; i++){
+    for(let i = 0; i < size ** 2; i++){
         let div = document.createElement('div');
         sketchpad.appendChild(div);
     }
 }
 
-resizeButton.addEventListener('click', Event => {
-    let rawSize = parseInt(prompt('Enter the size (from 1 to 100): ', 100));
-    let size = rawSize * rawSize;
-    sketchSize(size, sketchpad);
-})
+console.log(colorInput.checked);
 
-sketchpad.addEventListener('click', (Event) => {
-    Event.target.style.backgroundColor = 'gray';
+sketchpad.addEventListener('mouseover', (Event) => {
+    handleDrawing(Event);
 });
+
 
 restartButton.addEventListener('click', (Event) => {
     let cells = document.querySelectorAll('.sketchpad div');
@@ -22,3 +34,5 @@ restartButton.addEventListener('click', (Event) => {
         element.style.backgroundColor = 'white';
     })
 })
+
+sketchSize(16);
