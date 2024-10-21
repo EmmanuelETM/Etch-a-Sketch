@@ -1,19 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Besley:ital,wght@0,400;1,900&display=swap');
-
-body{
+* {
+    box-sizing: border-box;
+}
+body {
     font-family: Besley, serif;
     text-align: center;
     color: white;
     background-color: #111827;
-}
-
-button {
-    margin: 0 8px;
-    padding: 1rem 2rem;
-    background-color: #1d4ed8;
-    color: white;
-    border: none;
-    border-radius: 30px;
 }
 
 .container {
@@ -22,12 +15,12 @@ button {
     justify-content: center;
     align-items: center;
     gap: 1rem;
-
 }
 
 .options-container {
     display: flex;
     align-items: center;
+    gap: 2rem;
 }
 
 .button-container {
@@ -35,12 +28,18 @@ button {
     align-items: center;
 }
 
+.input-container {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
 
 .sketchpad {
     display: flex;
     align-items: center;
     flex-wrap: wrap;
-    width: 60%;
+    width: 550px;
+    height: 550px;
     background-color: white;
     color: black;
 }
@@ -49,4 +48,22 @@ button {
     flex: 1;
     border: solid black 1px;
     padding: 16px;
+}
+
+/* Buttons */
+
+.resize, .restart {
+    margin: 0 2px;
+    padding: 1rem 2rem;
+    background-color: #1d4ed8;
+    color: white;
+    border: none;
+}
+
+.resize {
+    border-radius: 30px 0 0 30px;
+}
+
+.restart {
+    border-radius: 0 30px 30px 0;
 }

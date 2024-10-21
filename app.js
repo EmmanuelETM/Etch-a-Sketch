@@ -1,15 +1,29 @@
-
 // Calculating the Sketchpad Size
-const sketchSize = (size) => {
-    sketchpad.innerHTML = '';
-    for(let i = 0; i < size ** 2; i++){
-        let div = document.createElement('div');
-        sketchpad.appendChild(div);
+
+const cellSize = (size) => {
+    let cellArr = document.querySelectorAll('.cell');
+    cellArr.forEach(cell => {
+        cell.style.width = `${550/size}` + 'px';
+        cell.style.height = `${550/size}` + 'px';
+    })
+}
+
+const gridSize = (size) => {
+    for (let i = 0; i < size ** 2; i++) {
+        let cell = document.createElement('div');
+        cell.classList.add('cell');
+        sketchpad.appendChild(cell);
     }
+
+    cellSize(size);
 }
 
 
+gridSize(16);
+
+
 // Color checkbox functions
+
 const getColor = () => {
     const color = '#' + Math.floor(Math.random() * 16777215).toString(16);
     return color;
@@ -26,12 +40,10 @@ const handleDrawing = (Event) => {
 // Hover and Click listeners and functions
 
 const handleAddListeners = (action) => {
-    console.log(`add ${action}`)
     sketchpad.addEventListener(action, handleDrawing);
 }
 
 const handleRemoveListeners = (action) => {
-    console.log(`remove ${action}`)
     sketchpad.removeEventListener(action, handleDrawing);
 }
 
@@ -53,16 +65,16 @@ const updateListeners = () => {
     }
 }
 
-updateListeners();
 hoverInput.addEventListener('change', updateListeners);
 
-
+// Restart button listeners
 
 restartButton.addEventListener('click', (Event) => {
     let cells = document.querySelectorAll('.sketchpad div');
     cells.forEach(element => {
         element.style.backgroundColor = 'white';
     })
+    sketchpad.style.backgroundColor = 'white';
 })
 
-sketchSize(16);
+updateListeners();
